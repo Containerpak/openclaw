@@ -35,7 +35,7 @@
     "filesystem": [{"path": "home", "access": "read-write"}],
     "env": [],
     "network": true,
-    "process": true,
+    "process": false,
     "userNamespaces": false,
     "memoryMaxMB": 0,
     "cpuQuota": 0,
