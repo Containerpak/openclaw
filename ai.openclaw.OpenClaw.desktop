@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=OpenClaw
+Comment=Run a personal AI assistant and open its local interface
+Exec=openclaw-desktop
+Icon=ai.openclaw.OpenClaw
+Categories=Utility;
+Keywords=AI;Assistant;Gateway;
+Terminal=false
