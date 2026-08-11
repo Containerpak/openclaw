@@ -21,6 +21,7 @@ RUN apt-get update && \
     cpak-clean-junk
 
 COPY --from=build /usr/local/lib/node_modules/openclaw /opt/openclaw
+COPY --from=build /usr/local/bin/node /usr/local/bin/node
 COPY openclaw /usr/bin/openclaw
 COPY openclaw-desktop /usr/bin/openclaw-desktop
 COPY ai.openclaw.OpenClaw.desktop /usr/share/applications/ai.openclaw.OpenClaw.desktop
