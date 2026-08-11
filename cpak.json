@@ -7,8 +7,12 @@
   "image": "ghcr.io/containerpak/openclaw:main",
   "binaries": ["/usr/bin/openclaw", "/usr/bin/openclaw-desktop"],
   "desktop_entries": ["/usr/share/applications/ai.openclaw.OpenClaw.desktop"],
-  "dependencies": [],
-  "addons": ["github.com/containerpak/sdk-node-lts"],
+  "dependencies": [
+    {
+      "origin": "github.com/containerpak/sdk-node-lts"
+    }
+  ],
+  "addons": [],
   "idle_time": 0,
   "override": {
     "socketX11": false,
