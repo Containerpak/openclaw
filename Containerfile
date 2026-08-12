@@ -4,9 +4,9 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends build-essential ca-certificates curl git python3 && \
-    curl -fsSL https://registry.npmjs.org/openclaw/-/openclaw-2026.7.1-2.tgz \
+    curl -fsSL https://registry.npmjs.org/openclaw/-/openclaw-2026.7.2-beta.4.tgz \
       -o /tmp/openclaw.tgz && \
-    echo '5bb525f36f471a41239615d321c441778c7e1c007018ed6d84b795be77803276  /tmp/openclaw.tgz' | sha256sum -c - && \
+    echo '822b3e5cec8bd41a7d2f4ff1709f1e9e789c6e5e4e23e058443b22f8f6e07ead  /tmp/openclaw.tgz' | sha256sum -c - && \
     npm install -g /tmp/openclaw.tgz
 
 FROM ghcr.io/containerpak/mesa:main
