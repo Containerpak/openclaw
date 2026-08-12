@@ -1,7 +1,7 @@
 #!/bin/sh
 state_dir="${XDG_STATE_HOME:-$HOME/.local/state}/openclaw"
 mkdir -p "$state_dir"
-openclaw gateway --port 18789 >>"$state_dir/gateway.log" 2>&1 &
+openclaw gateway --port 18789 --allow-unconfigured >>"$state_dir/gateway.log" 2>&1 &
 gateway_pid=$!
 trap 'kill "$gateway_pid" 2>/dev/null || true' EXIT INT TERM
 attempt=0
