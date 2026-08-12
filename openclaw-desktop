@@ -1,13 +1,26 @@
 #!/bin/sh
+set -e
+
 state_dir="${XDG_STATE_HOME:-$HOME/.local/state}/openclaw"
 mkdir -p "$state_dir"
-openclaw gateway --port 18789 --allow-unconfigured >>"$state_dir/gateway.log" 2>&1 &
+log_file="$state_dir/gateway.log"
+
+if ! openclaw config get gateway.mode >/dev/null 2>&1; then
+  openclaw config set gateway.mode local >>"$log_file" 2>&1
+fi
+if ! openclaw config get gateway.auth.mode >/dev/null 2>&1; then
+  token=$(node -e "process.stdout.write(require('node:crypto').randomBytes(32).toString('hex'))")
+  openclaw config set gateway.auth.mode token >>"$log_file" 2>&1
+  openclaw config set gateway.auth.token "$token" >>"$log_file" 2>&1
+fi
+
+openclaw gateway --port 18789 >>"$log_file" 2>&1 &
 gateway_pid=$!
 trap 'kill "$gateway_pid" 2>/dev/null || true' EXIT INT TERM
 attempt=0
 while [ "$attempt" -lt 60 ]; do
   if curl -fsS http://127.0.0.1:18789/ >/dev/null 2>&1; then
-    xdg-open http://127.0.0.1:18789/
+    openclaw dashboard >/dev/null 2>&1
     wait "$gateway_pid"
     exit $?
   fi
