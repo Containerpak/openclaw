@@ -1,26 +1,26 @@
 {
-  "$schema": "https://raw.githubusercontent.com/Containerpak/cpak/v2/schema/manifest-v2.json",
-  "manifest_version": "2.0",
+  "$schema": "https://raw.githubusercontent.com/Containerpak/cpak/v2/schema/manifest-v3.json",
+  "manifest_version": "3.0",
   "name": "OpenClaw",
   "description": "Run the OpenClaw AI gateway and its local web interface.",
   "version": "2026.7.2-beta.4",
-  "image": "ghcr.io/containerpak/openclaw:main",
-  "binaries": ["/usr/bin/openclaw", "/usr/bin/openclaw-desktop"],
-  "desktop_entries": ["/usr/share/applications/ai.openclaw.OpenClaw.desktop"],
+  "image": "ghcr.io/containerpak/openclaw@sha256:1d45418f908fadf524b975a51cc54f92d06cf8bdc349542bacb33d6143f2467a",
+  "binaries": [
+    "/usr/bin/openclaw",
+    "/usr/bin/openclaw-desktop"
+  ],
+  "desktop_entries": [
+    "/usr/share/applications/ai.openclaw.OpenClaw.desktop"
+  ],
   "dependencies": [],
   "addons": [],
   "idle_time": 0,
   "override": {
-    "socketX11": false,
     "socketWayland": false,
     "socketPulseAudio": true,
-    "socketSessionBus": true,
-    "socketSystemBus": false,
     "socketSshAgent": true,
     "socketCups": false,
     "socketGpgAgent": true,
-    "socketAtSpiBus": false,
-    "socketBluetooth": false,
     "deviceDri": false,
     "deviceKvm": false,
     "deviceShm": false,
@@ -32,7 +32,12 @@
     "deviceAll": false,
     "notification": true,
     "openURI": true,
-    "filesystem": [{"path": "home", "access": "read-write"}],
+    "filesystem": [
+      {
+        "path": "home",
+        "access": "read-write"
+      }
+    ],
     "env": [],
     "network": true,
     "process": false,
@@ -40,7 +45,6 @@
     "memoryMaxMB": 0,
     "cpuQuota": 0,
     "pidsMax": 0,
-    "asRoot": false,
-    "allowedHostCommands": ["xdg-open"]
+    "asRoot": false
   }
 }
