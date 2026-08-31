@@ -4,7 +4,7 @@
   "name": "OpenClaw",
   "description": "Run the OpenClaw AI gateway and its local web interface.",
   "version": "2026.8.1",
-  "image": "ghcr.io/containerpak/openclaw@sha256:5e4e5f11451de5463adc221426222802166ba18782afb9c6c4fbc8ab28e4d5c3",
+  "image": "ghcr.io/containerpak/openclaw@sha256:8da53c15ea55ce46dd81c15e0ae40d9d3278fb6b213fc7e835f412692d655820",
   "binaries": [
     "/usr/bin/openclaw",
     "/usr/bin/openclaw-desktop"
