@@ -3,7 +3,7 @@
   "manifest_version": "3.0",
   "name": "OpenClaw",
   "description": "Run the OpenClaw AI gateway and its local web interface.",
-  "version": "2026.9.2",
+  "version": "2026.9.3",
   "image": "ghcr.io/containerpak/openclaw@sha256:511b8edc6e8378e9fe35e98106440aa240c3aad5119e57a280d509fe06a8ec0f",
   "binaries": [
     "/usr/bin/openclaw",
