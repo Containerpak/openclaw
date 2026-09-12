@@ -2,7 +2,7 @@ FROM ghcr.io/containerpak/sdk-node-lts:main AS build
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-ADD --checksum=sha256:d1c63366833f8ae4a6ab4f3b60b1aa84ca82d03dba13d3d3eba989aa159e2449 https://registry.npmjs.org/openclaw/-/openclaw-2026.9.3.tgz /tmp/openclaw.tgz
+ADD --checksum=sha256:4f1f656770461d4677dea755b1899cba12b912b06798c89a59e2f0c18688b761 https://registry.npmjs.org/openclaw/-/openclaw-2026.9.4.tgz /tmp/openclaw.tgz
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends build-essential git python3 && \
